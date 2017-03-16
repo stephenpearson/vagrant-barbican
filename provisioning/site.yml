@@ -10,4 +10,4 @@
   - memcached
   - keystone
   - barbican
-#  - finish
+  - finish
