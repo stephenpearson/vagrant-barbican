@@ -1,0 +1,11 @@
+---
+- name: create barbican user in keystone
+  os_user: name=barbican password="{{ barbican_pass }}" domain=default
+  environment: "{{ admin_env }}"
+
+- name: barbican db sync
+  become_user: barbican
+  shell: barbican-manage db upgrade
+
+- name: restart barbican services
+  service: name=apache2 state=restarted

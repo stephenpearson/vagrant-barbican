@@ -1,0 +1,8 @@
+---
+- meta: flush_handlers
+
+- name: Show Login details
+  debug: msg="Keystone creds are admin / {{ admin_pass }} in Default domain"
+
+- name: "** WARNING ** Rebooting machine in 10 seconds"
+  shell: "nohup bash -c 'sleep 10; reboot' &"
